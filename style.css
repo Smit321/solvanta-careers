@@ -926,3 +926,53 @@ ul {
     box-shadow: 0 10px 20px rgba(15, 27, 61, 0.1);
   }
 }
+
+/* ===== FINAL LOGO + NAVBAR FIX ===== */
+:root {
+  color-scheme: light;
+}
+
+.navbar {
+  flex-wrap: nowrap;
+  gap: 15px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  max-width: 70%;
+  flex-shrink: 1;
+}
+
+.logo img {
+  background: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  max-width: 100%;
+}
+
+.logo .logo-icon {
+  height: 48px !important;
+  width: auto !important;
+}
+
+.logo .logo-name {
+  height: 14px !important;
+  width: auto !important;
+}
+
+.menu-toggle {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .logo .logo-icon {
+    height: 38px !important;
+  }
+
+  .logo .logo-name {
+    height: 13px !important;
+  }
+}
