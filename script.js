@@ -153,3 +153,46 @@ menuToggle.addEventListener("click", function () {
 navLinks.querySelectorAll("a").forEach(function (link) {
   link.addEventListener("click", closeMenu);
 });
+
+// ===== 8. RESOURCES DROPDOWN (phone par click se) =====
+const dropdownItems = document.querySelectorAll(".has-dropdown");
+
+dropdownItems.forEach(function (item) {
+  const btn = item.querySelector(".dropdown-toggle");
+
+  btn.addEventListener("click", function () {
+    if (window.innerWidth <= 900) {          // sirf phone/tablet par
+      item.classList.toggle("open");
+      btn.setAttribute("aria-expanded", item.classList.contains("open"));
+    }
+  });
+
+  // dropdown ke link par click karo to dropdown band
+  item.querySelectorAll(".dropdown a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      item.classList.remove("open");
+    });
+  });
+});
+
+
+// ===== 9. ACTIVE LINK HIGHLIGHT (jis section par ho wo link chamke) =====
+const spyLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+const spySections = document.querySelectorAll("section[id]");
+
+function highlightLink() {
+  let current = "home";
+
+  spySections.forEach(function (sec) {
+    if (window.scrollY >= sec.offsetTop - 140) {
+      current = sec.id;
+    }
+  });
+
+  spyLinks.forEach(function (link) {
+    link.classList.toggle("current", link.getAttribute("href") === "#" + current);
+  });
+}
+
+window.addEventListener("scroll", highlightLink);
+highlightLink();
