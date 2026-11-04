@@ -976,3 +976,267 @@ ul {
     height: 13px !important;
   }
 }
+
+/* ==================================================
+   FINAL MOBILE + NAVBAR FIX (hamesha sabse neeche rakho)
+   ================================================== */
+:root {
+  color-scheme: light;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+/* ----- Navbar (white, logo clear dikhe) ----- */
+.navbar {
+  background: #ffffff;
+  box-shadow: 0 2px 15px rgba(15, 27, 61, 0.1);
+  flex-wrap: nowrap;
+  gap: 15px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex-shrink: 1;
+}
+
+.logo img {
+  background: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+.logo .logo-icon {
+  height: 46px !important;
+  width: auto !important;
+}
+
+.logo .logo-name {
+  height: 14px !important;
+  width: auto !important;
+}
+
+.nav-links a {
+  color: var(--navy);
+}
+
+.nav-links a:hover {
+  color: #2a8fc4;
+}
+
+.nav-links .btn {
+  color: #ffffff;
+  background: var(--navy);
+  border-color: var(--navy);
+}
+
+.menu-toggle {
+  color: var(--navy);
+  flex-shrink: 0;
+}
+
+/* ----- Tablet aur Phone ----- */
+@media (max-width: 900px) {
+  .hero-wrap,
+  .about-wrap,
+  .footer-grid,
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-wrap > *,
+  .about-wrap > *,
+  .contact-wrapper > * {
+    min-width: 0;
+  }
+
+  .hero-visual {
+    display: none;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 110px 6% 50px;
+    text-align: center;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+}
+
+/* ----- Phone ----- */
+@media (max-width: 768px) {
+  .navbar,
+  .navbar.scrolled {
+    padding: 10px 5%;
+  }
+
+  .logo .logo-icon {
+    height: 36px !important;
+  }
+
+  .logo .logo-name {
+    height: 12px !important;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 0 20px;
+    box-shadow: 0 10px 20px rgba(15, 27, 61, 0.12);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+  }
+
+  .nav-links .btn {
+    display: inline-block;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-trust {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .hero-trust strong {
+    font-size: 1.4rem;
+  }
+
+  .hero-trust span {
+    font-size: 0.75rem;
+  }
+
+  .section {
+    padding: 60px 6%;
+  }
+
+  .section h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-visual {
+    gap: 12px;
+  }
+
+  .about-box {
+    padding: 22px 8px;
+  }
+
+  .about-box strong {
+    font-size: 1.7rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .stat .number {
+    font-size: 2.2rem;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .cta {
+    padding: 60px 6%;
+  }
+
+  .cta h2 {
+    font-size: 1.5rem;
+  }
+
+  .faq-question {
+    font-size: 0.95rem;
+    padding: 16px 18px;
+  }
+
+  .contact-info {
+    padding: 28px 22px;
+  }
+
+  .footer {
+    padding: 40px 6% 0;
+  }
+
+  .footer-grid {
+    text-align: center;
+    gap: 25px;
+  }
+}
+/* ===== MENU BUTTON RIGHT SIDE ===== */
+.menu-toggle {
+  margin-left: auto;        /* button ko right kone me bhejta hai */
+  font-size: 2rem;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.navbar nav {
+  width: 0;                 /* menu list ko jagah gher'ne se rokta hai */
+}
+
+@media (min-width: 769px) {
+  .navbar nav {
+    width: auto;            /* laptop par menu pehle jaisa rahe */
+    margin-left: auto;
+  }
+}
