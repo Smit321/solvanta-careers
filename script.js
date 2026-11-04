@@ -116,3 +116,40 @@ const revealObserver = new IntersectionObserver(function (entries) {
 revealItems.forEach(function (item) {
   revealObserver.observe(item);
 });
+
+// ===== 7. MENU AUTO CLOSE (scroll ya bahar tap karne par) =====
+function closeMenu() {
+  navLinks.classList.remove("active");
+  menuToggle.textContent = "☰";
+}
+
+// 1) scroll karte hi menu band
+window.addEventListener("scroll", function () {
+  if (navLinks.classList.contains("active")) {
+    closeMenu();
+  }
+});
+
+// 2) menu ke bahar kahin bhi tap karo to band
+document.addEventListener("click", function (event) {
+  const clickedInsideMenu = navLinks.contains(event.target);
+  const clickedButton = menuToggle.contains(event.target);
+
+  if (!clickedInsideMenu && !clickedButton) {
+    closeMenu();
+  }
+});
+
+// 3) button dabane par icon badle: ☰ <-> ✕
+menuToggle.addEventListener("click", function () {
+  if (navLinks.classList.contains("active")) {
+    menuToggle.textContent = "✕";
+  } else {
+    menuToggle.textContent = "☰";
+  }
+});
+
+// 4) menu ka link dabane par bhi icon wapas ☰ ho jaye
+navLinks.querySelectorAll("a").forEach(function (link) {
+  link.addEventListener("click", closeMenu);
+});

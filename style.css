@@ -1240,3 +1240,9 @@ section {
     margin-left: auto;
   }
 }
+@media (max-width: 768px) {
+  .nav-links {
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+  }
+}
